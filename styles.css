@@ -5,7 +5,7 @@
   --line: #e4e1dc;
   --muted: #727272;
   --placeholder: #f1f0ee;
-  --font: "Helvetica Neue", Arial, sans-serif;
+  --font: Georgia, "Times New Roman", Times, serif;
 }
 
 * {
@@ -181,18 +181,6 @@ svg {
 .shop-dropdown a {
   display: block;
   padding: 9px 17px;
-}
-
-.announcement-bar {
-  display: grid;
-  place-items: center;
-  min-height: 42px;
-  background: var(--black);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase;
 }
 
 .search-panel {

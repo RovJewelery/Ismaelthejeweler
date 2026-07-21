@@ -14,7 +14,7 @@ Use the provided `Isma` logo artwork as the brand logo direction/assets. The sto
 - Clean white header.
 - Centered logo area using the provided Isma logo artwork.
 - Thin uppercase navigation with wide letter spacing.
-- Black announcement bar.
+- No free-shipping announcement bar.
 - Black-and-white design foundation.
 - Product grid should feel clean, premium, and simple.
 - Do not use the screenshot photos as assets.

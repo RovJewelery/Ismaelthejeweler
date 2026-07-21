@@ -120,8 +120,6 @@ function renderHome() {
     <section class="hero" aria-label="IsmaTheJeweler hero">
       <div class="blank-media hero-media"><span>Homepage hero image/video placeholder</span></div>
       <div class="hero-content">
-        <p>IsmaTheJeweler</p>
-        <h1>Luxury Jewelry at Its Finest</h1>
         <a class="button button-light" href="#/shop">Shop All</a>
       </div>
     </section>
