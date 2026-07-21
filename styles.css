@@ -5,7 +5,8 @@
   --line: #e4e1dc;
   --muted: #727272;
   --placeholder: #f1f0ee;
-  --font: Georgia, "Times New Roman", Times, serif;
+  --header-height: 146px;
+  --font: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -18,9 +19,12 @@ html {
 
 body {
   margin: 0;
+  padding-top: var(--header-height);
   color: var(--black);
   background: var(--white);
   font-family: var(--font);
+  font-size: 18px;
+  font-weight: 500;
 }
 
 a {
@@ -44,15 +48,21 @@ svg {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
-  background: var(--soft);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
 }
 
 .header-inner {
-  height: 112px;
+  height: var(--header-height);
   display: grid;
+  grid-template-rows: 90px 56px;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   max-width: 1280px;
@@ -64,14 +74,14 @@ svg {
 .header-search-button {
   position: absolute;
   left: 46px;
-  top: 50%;
+  top: 45px;
   transform: translateY(-50%);
 }
 
 .header-actions {
   position: absolute;
   right: 46px;
-  top: 50%;
+  top: 45px;
   display: flex;
   align-items: center;
   gap: 23px;
@@ -110,34 +120,43 @@ svg {
 }
 
 .brand-logo {
-  grid-column: 2;
+  grid-column: 1 / -1;
+  grid-row: 1;
   justify-self: center;
+  align-self: end;
+  padding-bottom: 5px;
 }
 
 .brand-logo img {
-  width: 170px;
-  height: 82px;
+  width: 224px;
+  height: 72px;
   object-fit: contain;
 }
 
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 42px;
-  font-size: 13px;
-  letter-spacing: 7px;
+  gap: 36px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .header-nav-left {
+  grid-column: 1 / 2;
+  grid-row: 2;
   justify-self: end;
-  padding-right: 58px;
+  padding-right: 42px;
 }
 
 .header-nav-right {
+  grid-column: 3 / 4;
+  grid-row: 2;
   justify-self: start;
-  padding-left: 58px;
+  padding-left: 42px;
 }
 
 .shop-nav {
@@ -162,13 +181,14 @@ svg {
 
 .shop-dropdown {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 18px);
   left: -18px;
   min-width: 205px;
   display: none;
   padding: 13px 0;
   background: var(--white);
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+  font-size: 18px;
   letter-spacing: 1px;
   text-transform: none;
 }
@@ -222,6 +242,10 @@ textarea {
   background: var(--white);
   color: var(--black);
   font: inherit;
+}
+
+button {
+  font-family: inherit;
 }
 
 textarea {
@@ -696,8 +720,13 @@ h2 {
 }
 
 @media (max-width: 1040px) {
+  :root {
+    --header-height: 104px;
+  }
+
   .header-inner {
-    height: 96px;
+    height: var(--header-height);
+    grid-template-rows: 1fr;
     padding: 0 20px;
   }
 
@@ -707,14 +736,24 @@ h2 {
 
   .brand-logo {
     grid-column: 1 / -1;
+    grid-row: 1;
+    align-self: center;
+    padding-bottom: 0;
   }
 
   .brand-logo img {
-    width: 150px;
+    width: 170px;
+    height: 72px;
+  }
+
+  .header-search-button {
+    left: 20px;
+    top: 50%;
   }
 
   .header-actions {
     right: 20px;
+    top: 50%;
     gap: 14px;
   }
 

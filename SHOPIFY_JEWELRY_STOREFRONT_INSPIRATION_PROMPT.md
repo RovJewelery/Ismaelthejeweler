@@ -19,6 +19,11 @@ Use the provided `Isma` logo artwork as the brand logo direction/assets. The sto
 - Product grid should feel clean, premium, and simple.
 - Do not use the screenshot photos as assets.
 - Leave image areas blank with obvious placeholders.
+- Use a modern, elegant, highly readable font across the full website. The font should feel related to the script logo's luxury style, but it must stay clean and easy to read for navigation, product names, forms, prices, and buttons. Do not use a plain default-looking font.
+- Update the homepage/header top organization so it feels more unique and custom, not like a direct copy of the reference site.
+- The top header/navigation should be fixed or sticky so it remains available while scrolling.
+- Add the Isma logo image to the top middle of the header as the main visual brand mark.
+- Make the header layout feel intentional and premium, with balanced spacing around Home, Shop, Custom, Portfolio, Search, Account, and Cart.
 
 ## Required Navigation
 

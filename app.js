@@ -112,6 +112,11 @@ async function renderRoute() {
     return;
   }
 
+  if (currentRoute === '/contact') {
+    renderContact();
+    return;
+  }
+
   renderNotFound();
 }
 
@@ -364,6 +369,59 @@ function renderPortfolio() {
       <div class="blank-content">Portfolio content placeholder</div>
     </section>
   `;
+}
+
+function renderContact() {
+  app.innerHTML = `
+    <section class="custom-page">
+      <div class="section-title">
+        <p>Contact</p>
+        <h1>Contact Information</h1>
+      </div>
+      <p class="lead-copy">Leave your contact information below and we will reach out to you.</p>
+      <form class="inquiry-form" data-contact-form>
+        <div class="form-row">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="form-row">
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-row">
+          <label for="contact-phone">Phone Number</label>
+          <input id="contact-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-row">
+          <label for="contact-preference">Preferred Contact</label>
+          <select id="contact-preference" name="preference">
+            <option>Email</option>
+            <option>Phone</option>
+            <option>Text</option>
+          </select>
+        </div>
+        <div class="form-row form-wide">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="7" placeholder="Tell us what you need help with."></textarea>
+        </div>
+        <button class="button button-dark" type="submit">Send</button>
+      </form>
+    </section>
+  `;
+
+  app.querySelector('[data-contact-form]')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const body = encodeURIComponent([
+      `Name: ${form.name.value}`,
+      `Email: ${form.email.value}`,
+      `Phone: ${form.phone.value || 'Not provided'}`,
+      `Preferred contact: ${form.preference.value}`,
+      '',
+      `Message: ${form.message.value || 'No message provided'}`,
+    ].join('\n'));
+    window.location.href = `mailto:hello@ismathejeweler.com?subject=Contact Request&body=${body}`;
+  });
 }
 
 function renderNotFound() {

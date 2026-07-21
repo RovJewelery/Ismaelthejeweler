@@ -40,3 +40,4 @@ Only use a Shopify Storefront API token that is safe for public storefront use. 
 - `#/shop/misc`
 - `#/custom`
 - `#/portfolio`
+- `#/contact`
