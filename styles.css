@@ -122,15 +122,28 @@ svg {
 .brand-logo {
   grid-column: 1 / -1;
   grid-row: 1;
+  min-width: 260px;
+  min-height: 78px;
+  display: grid;
+  place-items: center;
   justify-self: center;
   align-self: end;
   padding-bottom: 5px;
 }
 
 .brand-logo img {
-  width: 224px;
-  height: 72px;
+  width: clamp(230px, 18vw, 310px);
+  height: auto;
+  max-height: 82px;
   object-fit: contain;
+  object-position: center;
+}
+
+.brand-fallback {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
 .header-nav {
@@ -742,8 +755,8 @@ h2 {
   }
 
   .brand-logo img {
-    width: 170px;
-    height: 72px;
+    width: 190px;
+    max-height: 72px;
   }
 
   .header-search-button {

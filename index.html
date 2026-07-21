@@ -41,7 +41,15 @@
         </nav>
 
         <a class="brand-logo" href="#/" aria-label="IsmaTheJeweler home">
-          <img src="assets/isma-logo.png" alt="IsmaTheJeweler">
+          <img
+            src="./assets/isma-logo.png?v=20260721-logo"
+            alt="IsmaTheJeweler"
+            width="469"
+            height="225"
+            decoding="async"
+            onerror="if (!this.dataset.fallback) { this.dataset.fallback = 'root'; this.src = './isma-logo.png?v=20260721-logo'; } else { this.hidden = true; this.nextElementSibling.hidden = false; }"
+          >
+          <span class="brand-fallback" hidden>IsmaTheJeweler</span>
         </a>
 
         <nav class="header-nav header-nav-right" aria-label="Page navigation">
