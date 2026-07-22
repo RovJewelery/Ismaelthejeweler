@@ -137,7 +137,6 @@ svg {
   max-height: 82px;
   object-fit: contain;
   object-position: center;
-  mix-blend-mode: multiply;
 }
 
 .brand-fallback {
@@ -729,7 +728,6 @@ h2 {
   width: min(230px, 54vw);
   height: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 
 .social-links {
