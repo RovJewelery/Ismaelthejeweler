@@ -137,6 +137,7 @@ svg {
   max-height: 82px;
   object-fit: contain;
   object-position: center;
+  mix-blend-mode: multiply;
 }
 
 .brand-fallback {
@@ -712,15 +713,50 @@ h2 {
 
 .site-footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding: 50px 46px;
+  padding: 42px 46px;
   background: var(--soft);
 }
 
-.site-footer p {
-  margin: 10px 0 0;
-  color: var(--muted);
+.footer-brand {
+  display: grid;
+  gap: 16px;
+}
+
+.footer-brand img {
+  width: min(230px, 54vw);
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-links a {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: var(--black);
+  opacity: 0.78;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.social-links svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.55;
 }
 
 .site-footer nav {
@@ -820,11 +856,18 @@ h2 {
   }
 
   .site-footer {
-    display: block;
+    display: grid;
+    justify-items: center;
+    text-align: center;
     padding: 40px 20px;
   }
 
   .site-footer nav {
+    justify-content: center;
     margin-top: 24px;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 }
